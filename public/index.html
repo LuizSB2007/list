@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stylized Mobile Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="top-bar">
+      <h1><em>Lista - Tiozin</em></h1>
+    </div>
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('general')">
+          Geral
+        </button>
+        <button class="tab-button" onclick="showTab('drinks')">Drinks</button>
+        <button class="tab-button" onclick="showTab('cuisine')">Cuisine</button>
+      </div>
+      <div class="tab-content" id="general">
+        <h2>Produtos gerais</h2>
+        <ul>
+          <li>
+            Product A
+            <span class="icon" onclick="editProduct('Product A')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content" id="drinks" style="display: none">
+        <h2>Bebidas</h2>
+        <ul>
+          <li>
+            Coffee <span class="icon" onclick="editProduct('Coffee')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+          <li>
+            Tea <span class="icon" onclick="editProduct('Tea')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+          <li>
+            Soda <span class="icon" onclick="editProduct('Soda')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content" id="cuisine" style="display: none">
+        <h2>Cozinha</h2>
+        <ul>
+          <li>
+            Pizza <span class="icon" onclick="editProduct('Pizza')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+          <li>
+            Sushi <span class="icon" onclick="editProduct('Sushi')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+          <li>
+            Burger <span class="icon" onclick="editProduct('Burger')">✏️</span>
+            <span class="icon" onclick="removeProduct(this)">🗑️</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="fixed-bar">
+      <button class="add-button" onclick="addProduct()">Adicionar</button>
+      <button class="remove-button" onclick="removeAllProduct()">Limpar</button>
+      <button class="filter-button" onclick="openModal()">Filtrar</button>
+      
+      <!-- Hamburger Icon -->
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Modal Title</h2>
+        <p>This is a modal window. You can add any content here.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
